@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# VYRA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+VYRA (Visual Workflow & Resource Architecture) is a comprehensive, local-first productivity application designed to help you manage projects, tasks, notes, and resources seamlessly.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Local-First Architecture:** All data is securely stored directly on your device using IndexedDB, guaranteeing ultra-fast load times and full offline capability.
+- **Projects & Kanban:** Visualize your workflows with interactive drag-and-drop Kanban boards.
+- **Rich Notes & Journals:** A powerful Markdown editor (powered by TipTap) for documentation, meeting notes, and daily journaling.
+- **Library & Assets:** Store, preview, and manage your files and reference materials directly in the app.
+- **Built-in Timer:** integrated Pomodoro and Flow timers that automatically log time against your tasks.
+- **Progressive Web App (PWA):** Installable on mobile and desktop platforms with offline support.
+- **Customizable UI:** Beautiful glassmorphism UI built with Tailwind CSS, supporting dark modes and custom themes.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React 19 + Vite
+- **Styling:** Tailwind CSS + Lucide Icons
+- **State Management:** Zustand
+- **Database:** IndexedDB (Local-First)
+- **Editor:** TipTap (Markdown)
 
-## Expanding the ESLint configuration
+## 📦 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Local Development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kew986/vyra.git
+   cd vyra
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+### Production Build
+
+To create a production-ready build:
+```bash
+npm run build
+```
+You can then preview the build locally using:
+```bash
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔒 Security & Privacy
+Vyra does not rely on external cloud databases. Your data is yours, stored exclusively in your local browser cache. 
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📄 License
+This project is open-source and available under the MIT License.
