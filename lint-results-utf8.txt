@@ -1,0 +1,494 @@
+﻿
+> vyra@0.0.0 lint
+> eslint .
+
+
+C:\xampp\htdocs\1. DesignHub\dev-dist\workbox-afac4cd2.js
+    52:7   error    Definition for rule '@typescript-eslint/ban-types' was not found                @typescript-eslint/ban-types
+   419:5   error    Definition for rule '@typescript-eslint/ban-types' was not found                @typescript-eslint/ban-types
+   435:5   warning  Unused eslint-disable directive (no problems were reported)
+   752:11  error    Definition for rule '@typescript-eslint/no-unsafe-member-access' was not found  @typescript-eslint/no-unsafe-member-access
+   754:13  error    Definition for rule '@typescript-eslint/no-unsafe-assignment' was not found     @typescript-eslint/no-unsafe-assignment
+   948:11  error    Definition for rule '@typescript-eslint/no-unsafe-assignment' was not found     @typescript-eslint/no-unsafe-assignment
+   964:13  error    Definition for rule '@typescript-eslint/no-unsafe-assignment' was not found     @typescript-eslint/no-unsafe-assignment
+   970:13  warning  Unused eslint-disable directive (no problems were reported)
+  1257:5   error    Definition for rule '@typescript-eslint/ban-types' was not found                @typescript-eslint/ban-types
+  1275:5   error    Definition for rule '@typescript-eslint/ban-types' was not found                @typescript-eslint/ban-types
+  2768:35  warning  Unused eslint-disable directive (no problems were reported)
+  3431:11  warning  Unused eslint-disable directive (no problems were reported)
+  3951:9   error    Definition for rule '@typescript-eslint/no-unsafe-return' was not found         @typescript-eslint/no-unsafe-return
+  3998:9   error    Definition for rule '@typescript-eslint/no-unsafe-return' was not found         @typescript-eslint/no-unsafe-return
+
+C:\xampp\htdocs\1. DesignHub\src\App.tsx
+   51:6  warning  React Hook useEffect has missing dependencies: 'loadLibrary', 'loadNotes', 'loadProjects', 'loadSettings', and 'loadTasks'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      react-hooks/exhaustive-deps
+   97:7  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\App.tsx:97:7
+   95 |   useEffect(() => {
+   96 |     if (settings.appLock?.enabled) {
+>  97 |       setIsLocked(true)
+      |       ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+   98 |     }
+   99 |   }, [settings.appLock?.enabled]) // Only run when lock setting is changed (or app mounts and loads settings)
+  100 |  react-hooks/set-state-in-effect
+  120:6  warning  React Hook useEffect has a missing dependency: 'settings.appLock'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react-hooks/exhaustive-deps
+
+C:\xampp\htdocs\1. DesignHub\src\db\db.ts
+  46:12  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\xampp\htdocs\1. DesignHub\src\features\dashboard\DashboardPage.tsx
+   3:74  error  'Clock' is defined but never used           @typescript-eslint/no-unused-vars
+  11:10  error  'Badge' is defined but never used           @typescript-eslint/no-unused-vars
+  15:10  error  'hexToRgba' is defined but never used       @typescript-eslint/no-unused-vars
+  22:9   error  'notes' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\dashboard\components\ActivityFeed.tsx
+  8:16  error  'EmptyState' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\library\LibraryPage.tsx
+   8:10  error  'Card' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+   9:10  error  'Badge' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+  11:10  error  'formatRelative' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+  24:7   error  'TYPE_BADGES' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+  27:7   error  'TYPE_ICONS' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-unused-vars
+  45:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\features\library\LibraryPage.tsx:45:7
+  43 |   useEffect(() => {
+  44 |     if (searchParams.get('new') === 'true') {
+> 45 |       setShowForm(true)
+     |       ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  46 |       const nextParams = new URLSearchParams(searchParams)
+  47 |       nextParams.delete('new')
+  48 |       setSearchParams(nextParams, { replace: true })  react-hooks/set-state-in-effect
+
+C:\xampp\htdocs\1. DesignHub\src\features\library\components\LibraryItemCard.tsx
+  28:41  error  'projectName' is defined but never used  @typescript-eslint/no-unused-vars
+  28:80  error  'onDelete' is defined but never used     @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\library\components\LibraryItemForm.tsx
+  40:6  warning  React Hook useEffect has a missing dependency: 'item'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\xampp\htdocs\1. DesignHub\src\features\library\store\libraryStore.ts
+  21:59  error  'get' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\notes\NotesPage.tsx
+   9:10  error    'Card' is defined but never used                                                                                 @typescript-eslint/no-unused-vars
+  86:6   warning  React Hook useEffect has a missing dependency: 'selectedNote'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\xampp\htdocs\1. DesignHub\src\features\notes\components\JournalDrawer.tsx
+  31:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\features\notes\components\JournalDrawer.tsx:31:7
+  29 |     
+  30 |     if (existing) {
+> 31 |       setJournalNoteId(existing.id)
+     |       ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  32 |     } else {
+  33 |       // Create a new one
+  34 |       create({  react-hooks/set-state-in-effect
+
+C:\xampp\htdocs\1. DesignHub\src\features\notes\components\NoteEditor.tsx
+   13:10  error    'Button' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+   62:34  error    'slice' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+  131:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\features\notes\components\NoteEditor.tsx:131:5
+  129 |       editor.commands.setContent(note.content)
+  130 |     }
+> 131 |     setTitle(note.title)
+      |     ^^^^^^^^ Avoid calling setState() directly within an effect
+  132 |     setType(note.type)
+  133 |   }, [note.id])
+  134 |  react-hooks/set-state-in-effect
+  133:6   warning  React Hook useEffect has missing dependencies: 'editor', 'note.content', 'note.title', and 'note.type'. Either include them or remove the dependency array. If 'setTitle' needs the current value of 'note.title', you can also switch to useReducer instead of useState and read 'note.title' in the reducer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/exhaustive-deps
+
+C:\xampp\htdocs\1. DesignHub\src\features\notes\extensions\LocalImageExtension.tsx
+   1:10  error  'mergeAttributes' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+   7:10  error  Fast refresh only works when a file only exports components. Move your component(s) to a separate file. If all exports are HOCs, add them to the `extraHOCs` option                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-refresh/only-export-components
+  26:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\features\notes\extensions\LocalImageExtension.tsx:26:7
+  24 |     } else if (props.node.attrs.src) {
+  25 |       // Fallback for regular external images if any
+> 26 |       setSrc(props.node.attrs.src)
+     |       ^^^^^^ Avoid calling setState() directly within an effect
+  27 |       setLoading(false)
+  28 |     }
+  29 |  react-hooks/set-state-in-effect
+
+C:\xampp\htdocs\1. DesignHub\src\features\notes\services\exportService.ts
+    4:39  error  'TextRun' is defined but never used             @typescript-eslint/no-unused-vars
+   61:33  error  'editorContainer' is defined but never used     @typescript-eslint/no-unused-vars
+  103:13  error  'pdfHeight' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  124:21  error  Unexpected any. Specify a different type        @typescript-eslint/no-explicit-any
+
+C:\xampp\htdocs\1. DesignHub\src\features\notifications\components\NotificationBell.tsx
+  31:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\xampp\htdocs\1. DesignHub\src\features\notifications\hooks\useNotificationEngine.ts
+   9:34  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  10:40  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  11:50  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  12:52  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  13:54  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  18:6   warning  React Hook useEffect has a missing dependency: 'loadNotifications'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  27:28  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  38:53  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  58:45  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  61:69  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  79:34  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+  86:54  error    Unexpected any. Specify a different type                                                                              @typescript-eslint/no-explicit-any
+
+C:\xampp\htdocs\1. DesignHub\src\features\notifications\store\notificationStore.ts
+  17:69  error  'get' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\projects\ProjectDetailPage.tsx
+  13:10  error    'TaskListView' is defined but never used                                                                            @typescript-eslint/no-unused-vars
+  68:6   warning  React Hook useEffect has a missing dependency: 'setSearchParams'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  79:6   warning  React Hook useEffect has a missing dependency: 'project'. Either include it or remove the dependency array          react-hooks/exhaustive-deps
+
+C:\xampp\htdocs\1. DesignHub\src\features\projects\ProjectsPage.tsx
+   3:60  error  'SlidersHorizontal' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+   8:10  error  'Card' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+  17:15  error  'Project' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         @typescript-eslint/no-unused-vars
+  38:36  error  'filters' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+  38:45  error  'setFilters' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+  46:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\features\projects\ProjectsPage.tsx:46:7
+  44 |   useEffect(() => {
+  45 |     if (searchParams.get('new') === 'true') {
+> 46 |       setShowForm(true)
+     |       ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  47 |       const nextParams = new URLSearchParams(searchParams)
+  48 |       nextParams.delete('new')
+  49 |       setSearchParams(nextParams, { replace: true })  react-hooks/set-state-in-effect
+
+C:\xampp\htdocs\1. DesignHub\src\features\projects\components\MoodboardCanvas.tsx
+  2:10  error  'Plus' is defined but never used    @typescript-eslint/no-unused-vars
+  4:10  error  'Button' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\projects\components\ProjectCard.tsx
+  1:10  error  'MoreVertical' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\security\LockScreen.tsx
+  2:10  error  'Lock' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\settings\SettingsPage.tsx
+    2:56  error  'Palette' is defined but never used  @typescript-eslint/no-unused-vars
+    2:82  error  'Lock' is defined but never used     @typescript-eslint/no-unused-vars
+   70:16  error  'err' is defined but never used      @typescript-eslint/no-unused-vars
+  101:20  error  'err' is defined but never used      @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\settings\components\HelpDocumentation.tsx
+  2:65  error  'HardDrive' is defined but never used  @typescript-eslint/no-unused-vars
+  5:10  error  'cn' is defined but never used         @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\sync\components\SyncModal.tsx
+   8:10  error  'cn' is defined but never used   @typescript-eslint/no-unused-vars
+  45:11  error  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\sync\hooks\useAutoSyncEngine.ts
+  25:8   error  'clientPeerId' is defined but never used  @typescript-eslint/no-unused-vars
+  68:18  error  'e' is defined but never used             @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\sync\services\syncService.ts
+  134:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  134:62  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\xampp\htdocs\1. DesignHub\src\features\sync\store\syncStore.ts
+   80:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  131:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  142:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\xampp\htdocs\1. DesignHub\src\features\tasks\TasksPage.tsx
+  13:27  error  'TaskPriority' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              @typescript-eslint/no-unused-vars
+  37:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\features\tasks\TasksPage.tsx:37:7
+  35 |   useEffect(() => {
+  36 |     if (searchParams.get('new') === 'true') {
+> 37 |       setShowForm(true)
+     |       ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  38 |       const nextParams = new URLSearchParams(searchParams)
+  39 |       nextParams.delete('new')
+  40 |       setSearchParams(nextParams, { replace: true })  react-hooks/set-state-in-effect
+
+C:\xampp\htdocs\1. DesignHub\src\features\tasks\components\TaskCard.tsx
+   2:10  error  'Flag' is defined but never used                @typescript-eslint/no-unused-vars
+  32:13  error  'id' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  32:17  error  'createdAt' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  32:28  error  'updatedAt' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\features\tasks\components\TaskForm.tsx
+  55:9  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\features\tasks\components\TaskForm.tsx:55:9
+  53 |     if (open) {
+  54 |       if (task) {
+> 55 |         setTitle(task.title)
+     |         ^^^^^^^^ Avoid calling setState() directly within an effect
+  56 |         setDescription(task.description ?? '')
+  57 |         setStatus(task.status)
+  58 |         setPriority(task.priority)  react-hooks/set-state-in-effect
+  86:6  warning  React Hook useEffect has a missing dependency: 'task'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               react-hooks/exhaustive-deps
+
+C:\xampp\htdocs\1. DesignHub\src\features\timer\components\TimerWidget.tsx
+  5:10  error  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\search\GlobalSearch.tsx
+  53:26  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\search\GlobalSearch.tsx:53:26
+  51 |   // Run search on query change
+  52 |   useEffect(() => {
+> 53 |     if (!query.trim()) { setResults([]); return }
+     |                          ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  54 |     const r = search(query)
+  55 |     setResults(r)
+  56 |     setActiveIndex(0)  react-hooks/set-state-in-effect
+  63:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\xampp\htdocs\1. DesignHub\src\search\GlobalSearch.tsx:63:7
+  61 |     if (open) {
+  62 |       setTimeout(() => inputRef.current?.focus(), 50)
+> 63 |       setQuery('')
+     |       ^^^^^^^^ Avoid calling setState() directly within an effect
+  64 |       setResults([])
+  65 |     }
+  66 |   }, [open])                                                                 react-hooks/set-state-in-effect
+
+C:\xampp\htdocs\1. DesignHub\src\shared\components\OnboardingModal.tsx
+   92:9  error    Error: Cannot access variable before it is declared
+
+`handleNext` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\xampp\htdocs\1. DesignHub\src\shared\components\OnboardingModal.tsx:92:9
+  90 |     const handleKeyDown = (e: KeyboardEvent) => {
+  91 |       if (e.key === 'ArrowRight') {
+> 92 |         handleNext()
+     |         ^^^^^^^^^^ `handleNext` accessed before it is declared
+  93 |       } else if (e.key === 'ArrowLeft') {
+  94 |         handleBack()
+  95 |       } else if (e.key === 'Escape') {
+
+C:\xampp\htdocs\1. DesignHub\src\shared\components\OnboardingModal.tsx:104:3
+  102 |   }, [currentStep])
+  103 |
+> 104 |   const handleNext = () => {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 105 |     if (currentStep < STEPS.length - 1) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 106 |       const nextStep = currentStep + 1
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 107 |       setCurrentStep(nextStep)
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 108 |       update({ lastTutorialStep: nextStep })
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 109 |     } else {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 110 |       handleFinish()
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 111 |     }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 112 |   }
+      | ^^^^ `handleNext` is declared here
+  113 |
+  114 |   const handleBack = () => {
+  115 |     if (currentStep > 0) {  react-hooks/immutability
+   94:9  error    Error: Cannot access variable before it is declared
+
+`handleBack` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\xampp\htdocs\1. DesignHub\src\shared\components\OnboardingModal.tsx:94:9
+  92 |         handleNext()
+  93 |       } else if (e.key === 'ArrowLeft') {
+> 94 |         handleBack()
+     |         ^^^^^^^^^^ `handleBack` accessed before it is declared
+  95 |       } else if (e.key === 'Escape') {
+  96 |         handleSkip()
+  97 |       }
+
+C:\xampp\htdocs\1. DesignHub\src\shared\components\OnboardingModal.tsx:114:3
+  112 |   }
+  113 |
+> 114 |   const handleBack = () => {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 115 |     if (currentStep > 0) {
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 116 |       const prevStep = currentStep - 1
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 117 |       setCurrentStep(prevStep)
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 118 |       update({ lastTutorialStep: prevStep })
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 119 |     }
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 120 |   }
+      | ^^^^ `handleBack` is declared here
+  121 |
+  122 |   const handleFinish = async () => {
+  123 |     await update({                                                                                                                                                                                                                                                                                                                           react-hooks/immutability
+   96:9  error    Error: Cannot access variable before it is declared
+
+`handleSkip` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\xampp\htdocs\1. DesignHub\src\shared\components\OnboardingModal.tsx:96:9
+  94 |         handleBack()
+  95 |       } else if (e.key === 'Escape') {
+> 96 |         handleSkip()
+     |         ^^^^^^^^^^ `handleSkip` accessed before it is declared
+  97 |       }
+  98 |     }
+  99 |
+
+C:\xampp\htdocs\1. DesignHub\src\shared\components\OnboardingModal.tsx:130:3
+  128 |   }
+  129 |
+> 130 |   const handleSkip = async () => {
+      |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 131 |     await update({
+      | ^^^^^^^^^^^^^^^^^^
+> 132 |       hasCompletedOnboarding: true,
+      | ^^^^^^^^^^^^^^^^^^
+> 133 |       onboardingCompletedAt: new Date().toISOString(),
+      | ^^^^^^^^^^^^^^^^^^
+> 134 |     })
+      | ^^^^^^^^^^^^^^^^^^
+> 135 |     toast.info("Tutorial skipped. You can restart it anytime from Settings > Help & Documentation.")
+      | ^^^^^^^^^^^^^^^^^^
+> 136 |   }
+      | ^^^^ `handleSkip` is declared here
+  137 |
+  138 |   const step = STEPS[currentStep]
+  139 |   const IconComponent = step.icon                                                                                                                                                                                                                                                                                                                              react-hooks/immutability
+  102:6  warning  React Hook useEffect has missing dependencies: 'handleBack', 'handleNext', and 'handleSkip'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      react-hooks/exhaustive-deps
+
+C:\xampp\htdocs\1. DesignHub\src\shared\hooks\useKeyboardShortcuts.ts
+  1:29  error  'useState' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\shared\layout\AppShell.tsx
+  19:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  37:37  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\xampp\htdocs\1. DesignHub\src\shared\layout\Sidebar.tsx
+   5:17  error  'Zap' is defined but never used                @typescript-eslint/no-unused-vars
+  22:9   error  'location' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\shared\layout\TopBar.tsx
+   2:10  error  'useNavigate' is defined but never used    @typescript-eslint/no-unused-vars
+   2:23  error  'useMatches' is defined but never used     @typescript-eslint/no-unused-vars
+  65:46  error  'onJournalOpen' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\xampp\htdocs\1. DesignHub\src\shared\ui\Toast.tsx
+   21:14  error    Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           react-refresh/only-export-components
+   35:14  error    Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           react-refresh/only-export-components
+   59:31  error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\xampp\htdocs\1. DesignHub\src\shared\ui\Toast.tsx:59:31
+  57 |   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  58 |   const remainingRef = useRef(item.duration || 4000)
+> 59 |   const startTimeRef = useRef(Date.now())
+     |                               ^^^^^^^^^^ Cannot call impure function
+  60 |
+  61 |   const handleClose = () => {
+  62 |     removeToast(item.id)                                                                                                                                                                                              react-hooks/purity
+   85:6   warning  React Hook useEffect has a missing dependency: 'startTimer'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+  151:36  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\xampp\htdocs\1. DesignHub\src\shared\ui\Toast.tsx:151:36
+  149 |           className={cn('h-full transition-all duration-[4000ms] ease-linear', progressColors[item.type])}
+  150 |           style={{
+> 151 |             width: isHovered ? `${(remainingRef.current / (item.duration || 4000)) * 100}%` : '0%',
+      |                                    ^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  152 |             animation: !isHovered ? `shrink-width ${remainingRef.current}ms linear forwards` : 'none',
+  153 |           }}
+  154 |         />  react-hooks/refs
+  152:53  error    Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+C:\xampp\htdocs\1. DesignHub\src\shared\ui\Toast.tsx:152:53
+  150 |           style={{
+  151 |             width: isHovered ? `${(remainingRef.current / (item.duration || 4000)) * 100}%` : '0%',
+> 152 |             animation: !isHovered ? `shrink-width ${remainingRef.current}ms linear forwards` : 'none',
+      |                                                     ^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  153 |           }}
+  154 |         />
+  155 |       </div>                                                                               react-hooks/refs
+
+C:\xampp\htdocs\1. DesignHub\src\shared\ui\index.tsx
+  4:1   error  This rule can't verify that `export *` only exports components                                                                  react-refresh/only-export-components
+  7:10  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\xampp\htdocs\1. DesignHub\src\shared\utils\progress.ts
+  21:7  error  The value assigned to 'health' is not used in subsequent statements  no-useless-assignment
+
+Γ£û 121 problems (106 errors, 15 warnings)
+  0 errors and 4 warnings potentially fixable with the `--fix` option.
+
